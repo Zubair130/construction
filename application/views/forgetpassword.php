@@ -17,11 +17,24 @@
                             <?php echo '</div>'; ?>
                             <?php }?>
                             <?php if ($this->session->flashdata('error')) {?>
+                            <?php echo '<div class="mx-auto alert alert-success">'; ?>
+                            <?php echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'; ?>
+                            <?php echo '<strong>Success! </strong>' . $this->session->flashdata('success'); ?>
+                            <?php echo '</div>'; ?>
+                            <?php }?>
+
+                            <!-- <?php if ($this->session->flashdata('success')) {?>
+                            <?php echo '<div class="mx-auto alert alert-success">'; ?>
+                            <?php echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'; ?>
+                            <?php echo '<strong>Success! </strong>' . $this->session->flashdata('success'); ?>
+                            <?php echo '</div>'; ?>
+                            <?php }?>
+                            <?php if ($this->session->flashdata('error')) {?>
                             <?php echo '<div class="mx-auto alert alert-danger">'; ?>
                             <?php echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'; ?>
                             <?php echo '<strong>Error! </strong>' . $this->session->flashdata('error'); ?>
                             <?php echo '</div>'; ?>
-                            <?php }?>
+                            <?php }?> -->
                             <form id="login" method="POST" action="<?php echo base_url(); ?>forget/process">
                                 <div class="form-group">
                                     <label for="email">Email</label>

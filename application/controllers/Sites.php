@@ -152,6 +152,8 @@ $this->Sites_Model->insertsurveydata($data2);
 $b++;
 }
 
+$this->showsurveydetails($survid);
+
   }//function bracket
 
 public function fetchsurvey()

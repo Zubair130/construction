@@ -23,7 +23,7 @@
 
 							</div>
 
-							<form action="<?php echo base_url().'sites/submitsurvey';?>" method="POST">
+							<form action="<?php echo base_url().'sites/submitsurvey';?>" method="POST" enctype="multipart/form-data">
 							<div class="row mt-2  py-2 mx-auto">
 								<div class="col-lg-6">
 									<label for="" class="mb-0">
@@ -1085,10 +1085,10 @@ if (isset($sitesdata)){
 								</div>
 							</div>
 							<div class="bg-theme  banner2 text-center text-white py-2 my-2">
-								<h5>Optional Attachment (Pdf or JPG)</h5>
+								<h5>Optional Attachment (JPG)</h5>
 							</div>
 							<div class="mb-2">
-								<input type="file" name="" id="" class="form-control">
+								<input type="file" multiple="multiple" name="image_name[]" class="form-control">
 							</div>
 							<div class="mb-3 ml-3">
 								<input name="submitsurvey" class="btn btn-primary text-white " type="submit">

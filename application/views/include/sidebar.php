@@ -1,4 +1,4 @@
-<?php $userid = $_SESSION['userid']; 
+<?php $userid = $_SESSION['roleid']; 
 //echo "<script>alert(' $userid');</script>";
 ?>
 
@@ -38,8 +38,25 @@
 			
 
 			<!-- <li><a class="nav-link" href="#"><i data-feather="briefcase"></i>Inspection List</a></li> -->
-			<li><a class="nav-link" href="<?php echo base_url() . 'sites/assignSite'; ?>"><i data-feather="briefcase"></i>Assign Site</a></li>
-			<li class="dropdown">
+			<?php if($userid == 1 || $userid == 2 ){
+				echo '
+					<style> .assignsite{
+						display:block !important;
+					}</style>
+				';
+			}
+			else{
+				echo '
+					<style> .assignsite{
+						display:none !important;
+					}</style>
+				';
+			}
+				?>
+
+			<li class="assignsite"><a class="nav-link" href="<?php echo base_url() . 'sites/assignSite'; ?>"><i data-feather="briefcase"></i>Assign Site</a></li>
+
+			<!-- <li class="dropdown">
 				<a href="#" class="menu-toggle nav-link has-dropdown"><i
 						data-feather="briefcase"></i><span>Report</span></a>
 				<ul class="dropdown-menu">
@@ -48,8 +65,25 @@
 				<ul class="dropdown-menu">
 					<li><a class="nav-link" href="#">Yearly Report</a></li>
 				</ul>
-			</li>
-			<li class="dropdown">
+			</li> -->
+
+			<?php if($userid == 1 || $userid == 2   ){
+				echo '
+					<style> .survey{
+						display:block !important;
+					}</style>
+				';
+			}
+			else{
+				echo '
+					<style> .assignsite{
+						display:none !important;
+					}</style>
+				';
+			}
+				?>
+
+			<li class="dropdown survey">
 				<a href="#" class="menu-toggle nav-link has-dropdown"><i
 						data-feather="briefcase"></i><span>Sites</span></a>
 				<ul class="dropdown-menu">
@@ -59,14 +93,33 @@
 					<li><a class="nav-link" href="<?php echo base_url() . 'sites/viewSites'; ?>">Site List</a></li>
 				</ul>
 			</li>
-			<li class="dropdown">
+
+	
+
+<?php if($userid == 3 || $userid == 1){
+				echo '
+					<style> .addsurvey{
+						display:block !important;
+					}</style>
+				';
+			}
+			else{
+				echo '
+					<style> .addsurvey{
+						display:none !important;
+					}</style>
+				';
+			}
+				?>
+
+			<li class="dropdown addsurvey">
 				<a href="#" class="menu-toggle nav-link has-dropdown"><i
 						data-feather="briefcase"></i><span>Inspection</span></a>
 				<ul class="dropdown-menu">
-					<li><a class="nav-link" href="<?php echo base_url() . 'sites/loadsurvey'; ?>">Site Inspection</a></li>
+					<li class=""><a class="nav-link" href="<?php echo base_url() . 'sites/loadsurvey'; ?>">Site Inspection</a></li>
 				</ul>
 				<ul class="dropdown-menu">
-					<li><a class="nav-link" href="<?php echo base_url() . 'sites/fetchsurvey'; ?>">Inspection List</a></li>
+					<li class=""><a class="nav-link" href="<?php echo base_url() . 'sites/fetchsurvey'; ?>">Inspection List</a></li>
 				</ul>
 			</li>
 

@@ -201,7 +201,7 @@ if (isset($sitesdata)){
 								<div class="row text-white d-flex justify-content-between">
 									<div class="col-lg-3 bg-theme mx-1 my-2 buttonlabel"></div>
 									<div class="col-lg-1 bg-theme mx-1 my-2 buttonlabel">
-										<h6 class="mb-0 py-2">Instruction</h6>
+										<h6 class="mb-0 py-2">Intervention</h6>
 									</div>
 									<div class="col-lg-3 bg-theme mx-1 my-2 buttonlabel">
 										<h6 class="mb-0 py-2">Comment</h6>

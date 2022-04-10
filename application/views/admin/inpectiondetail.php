@@ -107,6 +107,6 @@
             a.document.write(divContents);
             a.document.write('</body></html>');
             a.document.close();
-            a.print();
+          
         }
     </script>

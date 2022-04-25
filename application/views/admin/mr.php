@@ -74,9 +74,9 @@
 													<td class="text-center">
 														1-sep-21
 													</td>
-													<td>Maham Javed</td>
-													<td>Maham</td>
-													<td>Raw Sugar</td>
+													<td>John</td>
+													<td>SMith Gold</td>
+													<td>Raw Material</td>
 													<td>ryan morgan</td>
 													<td>2</td>
 													<td></td>
@@ -264,20 +264,20 @@ var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
 	type: 'bar',
 	data: {
-		labels: ["AkzoNobel", "Musk Desin", "Project Safety Audits", "Tate and Lyle", "Weetabox Burton AP1",
-			"Ronaled", "Acora", "Banoli", "Newo", "Nafros"
+		labels: ["XYZ Corporation", "Jummah Khan Company", "The CO. Propriter", "Tate and Male", "Lohy Lelan Comapny",
+			"Kabar Khana Corp.", "Beta Filler", "Bornsl Corporation", "Newo home store"
 		],
 		datasets: [{
-			label: 'Series 1', // Name the series
-			data: [500, 50, 2424, 14040, 14141, 4111, 4544, 47, 5555,
-			6811], // Specify the data values array
+			label: 'Interventions', // Name the series
+			data: [500, 50, 2424, 1404, 1411, 4111, 4544, 47, 555,
+			811], // Specify the data values array
 			fill: false,
 			borderColor: '#2196f3', // Add custom color border (Line)
 			backgroundColor: '#2196f3', // Add custom color background (Points and Fill)
 			borderWidth: 1 // Specify bar border width
 		}, {
-			label: 'Series 2', // Name the series
-			data: [1288, 88942, 44545, 7588, 99, 242, 1417, 5504, 75,
+			label: 'Inspections', // Name the series
+			data: [1288, 1842, 4545, 758, 99, 242, 117, 504, 75,
 			457], // Specify the data values array
 			fill: false,
 			borderColor: '#4CAF50', // Add custom color border (Line)

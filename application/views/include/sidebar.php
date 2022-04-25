@@ -93,7 +93,6 @@
 					<li><a class="nav-link" href="<?php echo base_url() . 'sites/viewSites'; ?>">Site List</a></li>
 				</ul>
 			</li>
-
 	
 
 <?php if($userid == 3 || $userid == 1){
@@ -122,9 +121,12 @@
 					<li class=""><a class="nav-link" href="<?php echo base_url() . 'sites/fetchsurvey'; ?>">Inspection List</a></li>
 				</ul>
 			</li>
-
+			<li ><a class="nav-link" href="<?php echo base_url() . 'dashboard/website'; ?>"><i data-feather="briefcase"></i>Company Website</a></li>
+			<li ><a class="nav-link" href="<?php echo base_url() . 'dashboard/mr'; ?>"><i data-feather="briefcase"></i>Monthly Report</a></li>
+			
 
 		</ul>
+		
 	</aside>
 </div>
 <!-- Sidebar End -->

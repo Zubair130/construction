@@ -67,7 +67,17 @@
 												<td><?php echo $key->interventiontype;?></td>
 												<td style="text-align: center !important;"><?php echo $key->intervention;?></td>
 												<td><?php echo $key->comments;?></td>
-												<td style="text-align: center !important;"><?php echo $key->iscompleted;?></td>
+												<td style="text-align: center !important;"><?php 
+												if($key->iscompleted == 1){
+													echo 'Yes';
+												}else if($key->iscompleted == 2){
+													echo 'NO';
+												}
+												else{
+													echo 'Not Confirm';
+												}
+												
+													?></td>
 												<td><?php echo $key->action;?></td>
 											</tr>
 											<?php 
@@ -79,23 +89,35 @@
 												<td><?php echo $key->intersum;?></td>
 											</tr>
 										</table>
+										<canvas id="myChart"></canvas>
+									
+										
+
 										</div>
 									</div>
 								</div>
+								
 							</div>
 						</div>
 					</div>
 
 				</div>
 			</section>
+			
 			<!-- Main Content End -->
 			<?php $this->load->view('include/themesetting') ?>
 		</div>
 
 	</div>
 </div>
+
+
 <!-- main content  -->
 <?php $this->load->view("admin/include/footer");?>
+
+
+
+
 
 <!-- Script to print the content of a div -->
 <script>

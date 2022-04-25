@@ -18,16 +18,16 @@ class Authentication extends CI_Controller
         $encryptedPassword = base64_encode($password);
         
         $userresponse = $this->Auth_Model->loginUser($email, $encryptedPassword);
-        echo $email;
-        echo $password;
-        echo $encryptedPassword;
+        // echo $email;
+        // echo $password;
+        // echo $encryptedPassword;
        // echo $userresponse;
-        var_dump($userresponse);
-         print_r($userresponse);
+        // var_dump($userresponse);
+        //  print_r($userresponse);
          //exit;
         // if (password_verify($password, $userresponse['password'])) {
             
-
+if( $userresponse != false ){
             if ($encryptedPassword == $userresponse['password']) {
             // if the user is in active
             if ($userresponse['isactive'] == 0) {
@@ -45,10 +45,11 @@ class Authentication extends CI_Controller
                     setcookie('password', '');
                 }
                 // used to redirect to page
-                $link = explode('?redirect=', $hreflink);
+                $link = explode('?redirect=',$hreflink);
                 if (!empty($link[1])) {
                     $page = $link[1];
                 } else {
+                   
                     
                     $page = 'dashboard';
                   
@@ -56,6 +57,7 @@ class Authentication extends CI_Controller
                 // check if the user is
                 if ($userresponse['roleid'] == '1' || $userresponse['roleid'] == '2' || $userresponse['roleid'] == '3' || $userresponse['roleid'] == '4') {
                     $userid = $userresponse['userid'];
+                    $this->session->set_flashdata('success','Login Success!');
                     // activing sessions
                     $this->session->set_userdata('userid', $userresponse['userid']);
                     $this->session->set_userdata('fullname', $userresponse['fullname']);
@@ -64,7 +66,7 @@ class Authentication extends CI_Controller
                     $this->session->set_userdata('username', $userresponse['username']);
                     $this->session->set_userdata('password', $userresponse['password']);
                     $this->session->set_userdata('roleid', $userresponse['roleid']);
-                    $this->session->set_userdata('userimg', $userresponse['userimg']);
+                    //$this->session->set_userdata('userimg', $userresponse['userimg']);
                  } 
                 // else {
                 //     $this->session->set_userdata('userid', $userresponse['userid']);
@@ -76,6 +78,7 @@ class Authentication extends CI_Controller
                 //     $this->session->set_userdata('roleid', $userresponse['roleid']);
                 //     $this->session->set_userdata('userimg', $userresponse['userimg']);
                 // }
+               
                 redirect($page, 'refresh');
             }
         } else {
@@ -83,6 +86,15 @@ class Authentication extends CI_Controller
             $this->session->keep_flashdata('error');
             redirect('login', 'refresh');
         }
+    }else
+    {
+       
+        $this->session->set_flashdata('error','Invalid Credentials');
+        // print_r($data);
+        // exit;
+        $this->load->view('login');
+
+    }
     }
 
     // user log-out function
